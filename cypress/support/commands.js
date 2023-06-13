@@ -56,6 +56,9 @@ Cypress.Commands.add("detalheFaturamento", () => {
     cy.get("#billing_company").clear().type(dados.empresa);
     cy.get("#billing_address_1").clear().type(dados.endereco);
     cy.get("#billing_city").clear().type(dados.cidade);
+    cy.get("#select2-billing_state-container")
+      .click()
+      .type(`${dados.estado}{enter}`);
     cy.get("#billing_postcode").clear().type(dados.cep);
     cy.get("#billing_phone").clear().type(dados.telefone);
     cy.get("#billing_email").clear().type(dados.email);
